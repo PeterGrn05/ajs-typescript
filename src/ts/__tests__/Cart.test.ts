@@ -3,12 +3,12 @@ import Movie from "../domain/Movie";
 import Book from "../domain/Book";
 import MusicAlbum from "../domain/MusicAlbum";
 
-test('new card should be empty', () => {
+test('Пустая Корзина', () => {
   const cart = new Cart();
   expect(cart.items.length).toBe(0);
 });
 
-test('card should be filled', () => {
+test('Заполненная Корзина', () => {
   const cart = new Cart();
   cart.add(new Movie(
     9999,
@@ -33,7 +33,7 @@ test('card should be filled', () => {
     ]);
 });
 
-test('card should be price', () => {
+test('Цена за содержимое', () => {
   const cart = new Cart();
   cart.add(new Book(
     1000,
@@ -60,7 +60,7 @@ test('card should be price', () => {
   expect(cart.price(0.2)).toEqual(4800);
 });
 
-test('card should be deleted one item', () => {
+test('Удаление одного товара из корзины', () => {
   const cart = new Cart();
   cart.add(new Book(
     1000,
